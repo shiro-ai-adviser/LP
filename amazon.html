@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Amazon連携（在庫シンク） — TEMARU</title>
+<meta name="description" content="AmazonとBUYMAを併売する出品者向けの在庫連携機能。Amazonで在庫が0になったら、BUYMAの同じ商品を自動で取り下げ、二重販売を防ぎます。購入者の個人情報は取得しません。" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+<link rel="icon" type="image/png" href="assets/favicon.png" />
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+</head>
+<body>
+<header class="nav">
+  <div class="wrap bar">
+    <a class="logo" href="index.html"><img src="assets/logo.png" alt="TEMARU" /></a>
+    <nav class="links">
+      <a class="back" href="index.html">← 自動出品ツールへ戻る</a>
+      <a class="cta" href="apply.html">無料で試す</a>
+    </nav>
+  </div>
+</header>
+
+<div class="phero">
+  <div class="wrap">
+    <span class="eyebrow">オプション機能</span>
+    <h1>Amazon連携（在庫シンク）</h1>
+    <p>AmazonとBUYMAの両方に同じ商品を出している方へ。Amazonで売り切れたら、BUYMAの出品を自動で取り下げます。</p>
+  </div>
+</div>
+
+<section>
+  <div class="wrap center">
+    <span class="eyebrow">解決すること</span>
+    <h2 class="sec">「もう無い商品」が売れてしまうのを防ぐ</h2>
+    <p class="sub">2つのモールに同じ商品を出していると、片方で売れた瞬間からもう片方は「在庫が無いのに売っている」状態になります。
+      気づかずに注文が入ると、キャンセルするしかありません。取引評価にも響きます。
+      この機能は、Amazon側の在庫を定期的に確認して、なくなったBUYMA出品を自動で取り下げます。</p>
+    <div class="grid3" style="text-align:left;margin-top:24px">
+      <div class="vcard"><h3>在庫を見張る</h3><p>Amazonの在庫数を定期的に確認します。売れて0になったことを検知します。</p></div>
+      <div class="vcard"><h3>BUYMAを取り下げる</h3><p>対応するBUYMA出品を、公式APIで「売り切れ」にします。在庫が戻れば再開できます。</p></div>
+      <div class="vcard"><h3>結果を残す</h3><p>いつ何を取り下げたかを記録し、出品者がいつでも確認できるようにします。</p></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">透明性</span>
+    <h2 class="sec center">Amazonから取得する情報と、その目的</h2>
+    <p class="sub center">この機能が使うのは、以下の情報だけです。出品者ご本人の許可（Amazonの認可画面での承認）を得たうえで取得します。</p>
+    <div class="tablewrap">
+      <table class="opttable">
+        <thead><tr><th>取得する情報</th><th>何のために使うか</th></tr></thead>
+        <tbody>
+          <tr><td>出品情報（SKU・商品コード）</td><td>Amazonの商品とBUYMAの商品を正しく対応づけるため</td></tr>
+          <tr><td>在庫数量</td><td>在庫が0になったことを検知して、BUYMA側を取り下げるため</td></tr>
+          <tr><td>注文の発生と数量</td><td>在庫確認の補助。どの商品がいくつ売れたかの把握のため</td></tr>
+          <tr><td>在庫数量の更新（書き込み）</td><td>BUYMAで売れたとき、Amazon側の自己発送在庫を減らすため</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="pcallout" style="margin-top:24px">
+      <h3>取得しないもの</h3>
+      <p><b>購入者の個人情報（氏名・住所・電話番号・メールアドレス）は取得しません。</b>
+      これらを扱う権限（制限付きの権限）は申請していません。在庫を合わせるために必要のない情報だからです。</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">安全性</span>
+    <h2 class="sec center">お預かりする情報の扱い</h2>
+    <ul class="lst">
+      <li>Amazonへの接続に使う認証情報は、当社が管理する専用サーバー内にのみ保管します。スプレッドシートやメール、チャットには保存しません。</li>
+      <li>取得した情報を第三者へ提供・販売することはありません。統計目的での外部提供も行いません。</li>
+      <li>ご利用を終了された場合、認証情報と関連データを削除します。出品者ご自身がAmazonの管理画面から接続を解除することもできます。</li>
+      <li>この機能はBUYMA側でも公式APIのみを使用します。ログイン情報をお預かりして画面を自動操作する方式は採用していません。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <div class="wrap center">
+    <span class="eyebrow">対象と提供状況</span>
+    <h2 class="sec">誰のための機能か</h2>
+    <p class="sub">AmazonとBUYMAの両方に同じ商品を出している、個人・小規模の出品者向けです。
+      TEMARU（BUYMA出品効率化ツール）のオプション機能として提供します。<br>
+      <b>現在、提供に向けた開発と検証を進めています。</b>ご利用をご希望の方は、下記までお問い合わせください。</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">For Amazon reviewers</span>
+    <h2 class="sec center">Summary in English</h2>
+    <p class="sub">This application helps individual sellers who list the same products on both Amazon and BUYMA (a Japanese cross-border marketplace) keep their inventory consistent across the two channels.</p>
+    <ul class="lst">
+      <li><b>What it does:</b> It periodically checks the seller's Amazon inventory. When an item's available quantity reaches zero, it automatically marks the matching BUYMA listing as out of stock, preventing oversell and order cancellations. It can also decrement the seller's merchant-fulfilled Amazon quantity when the item sells on BUYMA.</li>
+      <li><b>Data accessed:</b> Listing identifiers (SKU), inventory quantities, and order quantities for the authorizing seller's own account. Inventory quantity updates are written back to the same account.</li>
+      <li><b>Personally Identifiable Information:</b> <b>None.</b> We do not request restricted roles and do not retrieve buyer names, addresses, phone numbers, or email addresses. Buyer PII is not required to synchronize inventory.</li>
+      <li><b>Who uses it:</b> Individual and small-scale sellers in Japan. Each seller authorizes the application for their own account only.</li>
+      <li><b>Storage:</b> Credentials and tokens are stored only on servers operated by SHIRO, never in spreadsheets, email, or chat. Data is not shared with or sold to any third party. Data is deleted when a seller stops using the service, and sellers can revoke authorization from Seller Central at any time.</li>
+      <li><b>Status:</b> In development and testing, offered as an option of our BUYMA listing automation tool.</li>
+    </ul>
+  </div>
+</section>
+
+<section class="ctaband">
+  <div class="wrap">
+    <h2>お問い合わせ</h2>
+    <p>Amazon連携についてのご質問・ご要望は、こちらまでお願いします。<br>
+      <b>shiro.ai.adviser@gmail.com</b>（SHIRO）</p>
+    <a class="btn" href="tokushoho.html">特定商取引法に基づく表記</a>
+  </div>
+</section>
+
+<footer>
+  TEMARU（テマル）｜BUYMA出品効率化ツール ／ 運営 SHIRO<br>
+  BUYMAは株式会社エニグモの商標です。Amazonおよび関連するロゴは Amazon.com, Inc. またはその関連会社の商標です。<br>
+  本サービスは、株式会社エニグモおよび Amazon.com, Inc. とは資本関係のない、独立した第三者による出品支援ツールです。
+</footer>
+</body>
+</html>
