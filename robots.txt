@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+Disallow: /apply.html
+Disallow: /thanks.html
+Disallow: /apply-stock.html
+Disallow: /thanks-stock.html
+
+Sitemap: https://temaru.shiro-hq.com/sitemap.xml
