@@ -1,0 +1,16 @@
+{
+  "createdAt": "2026-10-17T14:21:08.811Z",
+  "model": "fal-ai/nano-banana-2/edit",
+  "requestId": "01a14a3c-bab0-7ad2-a28a-bd19a6314dfb",
+  "brand": "temaru",
+  "referencePaths": [
+    "sales/buyma-booster/assets/al-hero.png"
+  ],
+  "referenceUrls": [
+    "https://v3b.fal.media/files/b/0aaec06d/Eyrlma2div1v5DhTBTJnD_al-hero.png"
+  ],
+  "prompt": "Create a premium promotional background visual for temaru, a Japanese listing tool for online resellers. Palette: deep navy, royal blue, bright sky blue, with small warm gold accents. Clean, modern, cinematic, high-end. No people, no characters, no hands. No text, letters, numbers, logos, watermarks, or readable UI labels. Product cards may show items only. Scene direction: Vertical poster background. In the UPPER HALF: a floating translucent blue-glass browser window, slightly tilted in 3D perspective, showing a neat grid of luxury fashion product cards (leather handbag, white sneakers, sunglasses, watch, scarf) each with a small green check mark, product photos look like the reference. A few product cards fly into the window along a bright cyan light trail with sparkles. Background: night city skyline at blue hour seen from high above, glass skyscrapers, deep navy, a bright luminous sky glow behind the window, diagonal light rays. The LOWER 45% is calm deep navy with soft bokeh and gentle gradient, empty, good for overlaying large text. High contrast, premium advertising style.",
+  "aspectRatio": "4:5",
+  "falImageUrl": "https://v3b.fal.media/files/b/0aaec06d/WnotlL_UaIASbDMs-sXfB_Yv93lCZz.png",
+  "output": "../../../../../../../private/tmp/claude-501/-Users-aokikeita-Library-CloudStorage-GoogleDrive-moneyplan-adviser-gmail-com--------company-SHIRO/94185b31-e919-45f2-b522-c6b02fe5205b/scratchpad/ig/bg-portrait.png"
+}
